@@ -1,0 +1,25 @@
+droidViewfinder
+Copyright 2026 Jason Bridges
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The source code in this repository does not include third-party code other than the
+Gradle wrapper (gradlew, gradlew.bat, gradle/wrapper/), which is Copyright the original
+authors and licensed under the Apache License, Version 2.0.
+
+Builds of the app (APK files) include the following third-party libraries, fetched by
+Gradle at build time. Each remains under its own license:
+
+- UVCAndroid (com.herohan:UVCAndroid) - Apache License 2.0
+  https://github.com/shiyinghan/UVCAndroid
+  Its native code bundles:
+  - UVCCamera - Apache License 2.0
+  - libuvc - BSD-style license
+  - libusb - GNU Lesser General Public License, version 2.1 or later
+  - libjpeg-turbo - IJG License, Modified (3-clause) BSD License and zlib License
+  - libyuv - BSD 3-Clause License
+- AndroidX and Jetpack Compose libraries - Apache License 2.0
+- Kotlin standard library and kotlinx.coroutines - Apache License 2.0
+
+Anyone distributing APK files should comply with these licenses, including the LGPL terms
+for libusb.

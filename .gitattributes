@@ -1,0 +1,4 @@
+# Built and run in a Linux container: force LF so a Windows checkout can't break gradlew.
+* text=auto eol=lf
+*.jar binary
+*.bat text eol=crlf

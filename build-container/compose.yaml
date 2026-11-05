@@ -1,0 +1,32 @@
+# droidViewfinder Android build container. Run from the repository root:
+#   docker compose -f build-container/compose.yaml up -d --build
+# The checkout is mounted at /workspace, and Gradle runs there (the Android project is at the repository root).
+name: droidviewfinder-android
+
+services:
+  android-build:
+    build:
+      context: .
+      args:
+        USER_UID: "${HOST_UID:-1000}"
+        USER_GID: "${HOST_GID:-1000}"
+    image: droidviewfinder-android-builder:latest
+    container_name: droidviewfinder-android-build
+    # Host networking so `adb connect <phone-ip>:<port>` (wireless debugging) reaches a phone on the LAN.
+    # Remove this line if you only build and never install from the container.
+    network_mode: host
+    # Resource caps for a shared machine; raise or remove them as you like.
+    cpus: "4"
+    mem_limit: 6g
+    volumes:
+      - ..:/workspace
+      # Gradle cache (wrapper distribution, plugins, dependencies), kept between container rebuilds.
+      - gradle-cache:/home/dev/.gradle
+      # adb key and the debug signing key (debug.keystore), kept between container rebuilds.
+      - android-home:/home/dev/.android
+    working_dir: /workspace
+    restart: unless-stopped
+
+volumes:
+  gradle-cache:
+  android-home:

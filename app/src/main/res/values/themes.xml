@@ -1,0 +1,7 @@
+<resources>
+    <!-- Compose draws the UI; this supplies the window background before the first frame and lets the
+         window extend into the display cutout so the viewer can be truly full screen in landscape. -->
+    <style name="Theme.DroidViewfinder" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowLayoutInDisplayCutoutMode">always</item>
+    </style>
+</resources>

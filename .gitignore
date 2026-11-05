@@ -1,0 +1,27 @@
+# Gradle / Android build output
+.gradle/
+build/
+*.apk
+*.aab
+local.properties
+.kotlin/
+
+# Signing material and secrets: never commit
+*.keystore
+*.jks
+*.env
+
+# JVM crash dumps
+hs_err_pid*.log
+replay_pid*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Backup copies of edited files
+*.bak-*

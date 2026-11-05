@@ -1,0 +1,2 @@
+# Everything here runs in a Linux container: force LF so a Windows checkout can't break the shell script.
+* text eol=lf
